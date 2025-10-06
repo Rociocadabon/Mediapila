@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Editorial de Sentires</title>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Italianno&display=swap" rel="stylesheet">
+        <style>
+            :root {
+            --color-fondo-dia: #fdf7f0;
+            --color-fondo-noche: #2e2b27;
+            --color-texto-dia: #4b3f36;
+            --color-texto-noche: #f5f0e6;
+            --color-boton-dia: #c49b83;
+            --color-boton-noche: #8c6b57;
+            --color-boton-hover-dia: #a67c65;
+            --color-boton-hover-noche: #b08f6b;
+            }
+
+            body {
+            font-family: "EB Garamond", serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--color-fondo-dia);
+            color: var(--color-texto-dia);
+            transition: all 0.4s ease;
+            }
+            header {
+            width: 100%;
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            background: rgba(255,255,255,0.9);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            }
+            header h1 {
+            font-family: "Italianno", cursive;
+            font-size: 3.8em;
+            margin: 0;
+            color: var(--color-texto-dia);
+            transition: all 0.4s ease;
+            }
+            header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            }
+            textarea {
+            width: 80%;
+            max-width: 700px;
+            height: 120px;
+            margin: 15px 0;
+            padding: 15px;
+            font-size: 1.2em;
+            border-radius: 14px;
+            resize: none;
+            outline: none;
+            font-family: "EB Garamond", serif;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            }
+            .poemas {
+            margin-top: 40px;
+            width: 80%;
+            max-width: 700px;
+            }
+            .poema {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #e3d8c8;
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            font-size: 1.2em;
+            line-height: 1.5em;
+            position: relative;
+            transition: all 0.4s ease;
+            }
+            .comentario {
+            margin-top: 10px;
+            padding: 6px 12px;
+            background: #fff9f2;
+            border-left: 3px solid #e6d3c1;
+            border-radius: 10px;
+            font-size: 1.1em;
+            line-height: 1.4em;
+            transition: all 0.4s ease;
+            }
+            .input-comentario {
+            width: 100%;
+            height: 50px;
+            margin-top: 8px;
+            border-radius: 12px;
+            padding: 8px 10px;
+            border: 1px solid #e6d3c1;
+            outline: none;
+            font-family: "EB Garamond", serif;
+            font-size: 1.1em;
+            transition: all 0.4s ease;
+            }
+            .input-comentario:focus { border-color: #c49b83; background: #fff6f0; }
+            .btn-borrar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #c94e3f;
+            color: white;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            }
+            .btn-borrar:hover { background: #a93c2d; }
+            button {
+            background: var(--color-boton-dia);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: "EB Garamond", serif;
+            margin-bottom: 20px;
+            }
+            button:hover { background: var(--color-boton-hover-dia); transform: scale(1.05); }
+            #mural { display: none; flex-direction: column; align-items: center; width: 100%; }
+            footer {
+            margin-top: 50px;
+            padding: 15px 20px;
+            text-align: center;
+            width: 100%;
+            font-size: 1em;
+            color: #7a5a48;
+            border-top: 1px solid #e3d8c8;
+            transition: all 0.4s ease;
+            }
+
+            /* Modo nocturno */
+            body.noche {
+            background: var(--color-fondo-noche);
+            color: var(--color-texto-noche);
+            }
+            body.noche header { background: rgba(46,43,39,0.9); }
+            body.noche header h1 { color: var(--color-texto-noche); }
+            body.noche .poema { background: rgba(50,47,42,0.9); border-color: #7a6b5c; color: var(--color-texto-noche); }
+            body.noche .comentario { background: #3f3b34; border-color: #7a6b5c; color: var(--color-texto-noche); }
+            body.noche textarea, body.noche .input-comentario { background: #3f3b34; color: var(--color-texto-noche); border-color: #7a6b5c; }
+            body.noche button { background: var(--color-boton-noche); }
+            body.noche button:hover { background: var(--color-boton-hover-noche); }
+            body.noche footer { border-top-color: #7a6b5c; color: var(--color-texto-noche); }
+
+            #toggleModo { position: fixed; top: 20px; right: 20px; padding: 6px 12px; border-radius: 12px; font-size: 0.9em; }
+        </style>
+    </head>
+    <body>
+
+        <button id="toggleModo">Modo noche</button>
+
+        <header id="portada">
+        <h1>Editorial de Sentires</h1>
+        <p>
+            Bienvenid@ 🌿 Este es un espacio abierto para escribir lo que sientas: un poema, un verso, una confesión, un pensamiento.<br>
+            Comparte y deja que tus palabras lleguen a otros corazones.
+        </p>
+        <button id="btnEntrar">Entrar</button>
+        </header>
+
+        <div id="mural">
+        <h1>Escribí y compartí</h1>
+        <textarea id="poema" placeholder="Escribí tu poema aquí..."></textarea>
+        <br>
+        <button id="btnPublicar">Publicar</button>
+        <div class="poemas" id="poemas"></div>
+        </div>
+
+        <footer>
+        <p>© 2025 Editorial de Sentires - Creado por Soledad Cadabon</p>
+        </footer>
+
+        <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBITy0BDx1Qdjpl5q_SGRWpXUkZJepSbYI",
+            authDomain: "editoria-de-sentires.firebaseapp.com",
+            projectId: "editoria-de-sentires",
+            storageBucket: "editoria-de-sentires.firebasestorage.app",
+            messagingSenderId: "855441738379",
+            appId: "1:855441738379:web:3932b21f0fa1e06198228e",
+            measurementId: "G-X4M10DDDXQ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const btnEntrar = document.getElementById("btnEntrar");
+        const portada = document.getElementById("portada");
+        const mural = document.getElementById("mural");
+        const btn = document.getElementById("btnPublicar");
+        const input = document.getElementById("poema");
+        const contenedor = document.getElementById("poemas");
+        const toggleModo = document.getElementById("toggleModo");
+
+        // Funciones
+        btnEntrar.addEventListener("click", () => {
+            portada.style.display = "none";
+            mural.style.display = "flex";
+            cargarPoemas();
+        });
+
+        toggleModo.addEventListener("click", () => {
+            document.body.classList.toggle("noche");
+        });
+
+        async function publicar() {
+            const texto = input.value.trim();
+            if (texto === "") return;
+            await addDoc(collection(db, "poemas"), { contenido: texto, fecha: new Date() });
+            input.value = "";
+            cargarPoemas();
+        }
+
+        async function publicarComentario(poemaId, inputCom) {
+            const texto = inputCom.value.trim();
+            if (texto === "") return;
+            await addDoc(collection(db, `poemas/${poemaId}/comentarios`), { contenido: texto, fecha: new Date() });
+            inputCom.value = "";
+            cargarPoemas();
+        }
+
+        async function cargarComentarios(poemaId, contenedorComentarios) {
+            contenedorComentarios.innerHTML = "";
+            const q = query(collection(db, `poemas/${poemaId}/comentarios`), orderBy("fecha", "asc"));
+            const snapshot = await getDocs(q);
+            snapshot.forEach(doc => {
+                const div = document.createElement("div");
+                div.classList.add("comentario");
+                div.textContent = doc.data().contenido;
+                contenedorComentarios.appendChild(div);
+            });
+        }
+
+        async function borrarPoema(poemaId) {
+            await deleteDoc(doc(db, "poemas", poemaId));
+            cargarPoemas();
+        }
+
+        async function cargarPoemas() {
+            contenedor.innerHTML = "";
+            const q = query(collection(db, "poemas"), orderBy("fecha", "desc"));
+            const snapshot = await getDocs(q);
+            snapshot.forEach(docSnap => {
+                const divPoema = document.createElement("div");
+                divPoema.classList.add("poema");
+                divPoema.textContent = docSnap.data().contenido;
+
+                // Botón borrar
+                const btnBorrar = document.createElement("button");
+                btnBorrar.classList.add("btn-borrar");
+                btnBorrar.textContent = "Eliminar";
+                btnBorrar.addEventListener("click", () => borrarPoema(docSnap.id));
+                divPoema.appendChild(btnBorrar);
+
+                // Comentarios
+                const contCom = document.createElement("div");
+                contCom.style.marginTop = "10px";
+
+                const inputCom = document.createElement("textarea");
+                inputCom.placeholder = "Escribí un comentario...";
+                inputCom.classList.add("input-comentario");
+
+                const btnCom = document.createElement("button");
+                btnCom.textContent = "Comentar";
+                btnCom.style.marginTop = "5px";
+                btnCom.addEventListener("click", () => publicarComentario(docSnap.id, inputCom));
+
+                const contPoemaComentarios = document.createElement("div");
+                contPoemaComentarios.style.marginTop = "10px";
+
+                contCom.appendChild(inputCom);
+                contCom.appendChild(btnCom);
+                contCom.appendChild(contPoemaComentarios);
+
+                divPoema.appendChild(contCom);
+
+                cargarComentarios(docSnap.id, contPoemaComentarios);
+
+                contenedor.appendChild(divPoema);
+            });
+        }
+
+        // Eventos
+        btn.addEventListener("click", publicar);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clase 5</title>
+    </head>
+
+    <body>
+
+        <form action="https://www.ejemplo.com/email.php" method="post">
+
+            <label>
+                Nombre
+                <input type="text" name="nombre" placeholder="Nombre" required>
+            </label>
+            <br>
+            <br>
+            <label>
+                Email
+                <input type="email" name="email" placeholder="Mail" required>
+            </label>
+            <br>
+            <br>
+            <label>
+                Constraseña
+                <input type="password" name="password" placeholder="Contraseña" required>
+            </label>
+            <br>
+            <br>
+            <label>
+                Mensaje
+                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            </label>
+            <br>
+            <br>
+
+            <!-- Radios -->
+            <h3>Desde donde nos escribis?</h3>
+
+            <label>
+                <input type="radio" name="pais">
+                Argentina
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="pais">
+                Chile
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="pais">
+                Uruguay
+            </label>
+            <br>
+
+            <!-- Chackboxs -->
+            <h3>Que Servicios te interesan?</h3>
+
+            <label>
+                <input type="checkbox" name="servicio">
+                Programación
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="servicio">
+                Consultoría
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="servicio">
+                QA
+            </label>
+
+            <br>
+            <br>
+            
+            <button type="submit">Subir</button>
+
+        </form>
+        
+    </body>
+
+</html>

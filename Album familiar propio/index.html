@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>ALBUM FAMILIAR</title>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+
+            /* Fondo principal */
+            .fondo-completo {
+                background-image: url('https://i.pinimg.com/1200x/77/1a/c9/771ac9b913617408c5caac1e598accbf.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: white;
+                padding: 40px 20px;
+                min-height: 100vh;
+                box-sizing: border-box;
+            }
+
+            /* Texto destacado inicial */
+            .texto-destacado {
+                background: rgba(0,0,0,0.5);
+                padding: 15px;
+                display: inline-block;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            /* Texto descriptivo */
+            .texto-contenido {
+                background: rgba(240,240,241,0.7);
+                color: black;
+                padding: 15px;
+                margin: 0 auto 20px auto;
+                max-width: 700px;
+                text-align: left;
+                border-radius: 8px;
+            }
+
+            /* Contenedor de imágenes en fila */
+            .galeria {
+                display: flex;
+                justify-content: flex-start; /* alineadas a la izquierda */
+                gap: 20px; /* espacio entre imágenes */
+                flex-wrap: wrap; /* si la pantalla es chica, bajan a la siguiente línea */
+                margin-top: 20px;
+            }
+
+            /* Imágenes del álbum */
+            .imagen-album {
+                max-width: 15%;  /* ancho máximo de cada imagen */
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="fondo-completo">
+            <!-- Texto inicial -->
+            <div class="texto-destacado">
+                <h1>Bienvenidos al álbum familiar</h1>
+                <p>Golden, Fiorentina, Simon y Rocio</p>
+            </div>
+
+            <!-- Texto descriptivo -->
+            <div class="texto-contenido">
+                <em><h2>Comenzaremos con mi primer conjuntivitis (Golden)</h2></em>
+                <p><em>Pudo haberme entrado tierrita u alguna partícula del patio de mi casa
+                    que es donde me divierto y me revuelco como si no hubiera un mañana...<br>
+                    mamá y papá no han encontrado un porqué a la irritación de mis ojos en ese momento,
+                    pero me la he pasado fatal con mis ojitos achinados y cristalinos de mis lagrimeos por la molestia.<br>
+                    Así y todo me recuperé con unas gotitas que me colocaban en los ojos y pude seguir
+                    disfrutando de la libertad que encontraba en el patio y de mis ocurrencias gatunas.<br>
+                    Les dejaré algunas fotitos para que vean cómo me encontraba en ese momento 
+                    con mi terrible conjuntivitis. (reir no es opcion)</em></p>
+            </div>
+
+            <!-- Imágenes en fila -->
+            <div class="galeria">
+                <img src="https://i.pinimg.com/736x/9e/56/df/9e56df3ec619e8e9808a54ad5f8c502c.jpg" 
+                    alt="Golden con conjuntivitis" class="imagen-album">
+
+                <img src="https://i.pinimg.com/736x/18/64/7f/18647ff98f5a6e81aaaf97ac220bcfd2.jpg" 
+                    alt="Golden jugando" class="imagen-album">
+
+                <img src="https://i.pinimg.com/1200x/89/84/e2/8984e20bcf83b255a14f09c47c77b832.jpg" 
+                    alt="Golden descansando" class="imagen-album">
+            </div>
+
+
+ <!-- Texto descriptivo -->
+            <br>
+            <div class="texto-contenido">
+             
+                <em><h2>¡Hola! me llamo fiorentina y aqui me encuentro con mi ex amigo...</h2></em>
+                <p><em>si.. como leyeron.. mi ex amigo... mi primer lauchita regalada por mis padres<br>
+                    despues de jugar tanto con ella mi hermanito golden se la adueño pero me quedo un lindo recuerdo con mi ex amiga lauchita...<br>
+                    (les dejare unas fotitos mias con mi ex lauchita)
+                 </em></p>
+             <br>    
+            </div>
+
+
+
+ <!-- Imágenes en fila -->
+            <div class="galeria">
+                <img src="https://i.pinimg.com/736x/c8/43/b7/c843b7a8afec1d712f5705b91c10a6d1.jpg" 
+                    alt="Golden con conjuntivitis" class="imagen-album">
+
+                <img src="https://i.pinimg.com/736x/23/d4/f6/23d4f6d00bf30fbd410f15910bb07a55.jpg" 
+                    alt="Golden jugando" class="imagen-album">
+
+                <img src="https://i.pinimg.com/736x/23/d4/f6/23d4f6d00bf30fbd410f15910bb07a55.jpg" 
+                    alt="Golden descansando" class="imagen-album">
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,91 @@
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Estilos comunes */
+.panchito {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative; /* para poder poner "salsas" y semillas */
+}
+
+/* Pan arriba */
+#pan-arriba {
+    background-color: #deb887;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+/* Semillas de sésamo */
+#pan-arriba::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 10px;
+    height: 5px;
+    background: #fff8dc;
+    border-radius: 50%;
+    box-shadow: 
+        30px 0 #fff8dc,
+        60px 0 #fff8dc,
+        90px 0 #fff8dc,
+        120px 0 #fff8dc,
+        150px 0 #fff8dc,
+        180px 0 #fff8dc,
+        210px 0 #fff8dc,
+        240px 0 #fff8dc;
+}
+
+/* Relleno */
+#relleno {
+    background-color: #a52a2a;
+    height: 40px;
+    border-radius: 20px;
+    margin: -10px 0; 
+}
+
+/* Pan abajo */
+#pan-abajo {
+    background-color: #deb887;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-top: -10px; 
+}
+
+/* Mostaza encima del relleno */
+#relleno::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    width: 260px;
+    height: 6px;
+    background: yellow;
+    border-radius: 3px;
+    
+}
+
+/* Ketchup encima del relleno */
+#relleno::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 260px;
+    height: 6px;
+    background: red;
+    border-radius: 3px;
+   
+}

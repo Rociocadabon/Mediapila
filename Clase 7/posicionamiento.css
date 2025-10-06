@@ -1,0 +1,22 @@
+.container {
+    height: 500px;
+    background-color: grey;
+}
+
+.square_base {
+    width: 150px;
+    height: 150px;
+
+    background-color: rgb(251, 14, 14);
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+
+    background-color: black;
+
+    position: relative;
+    top: 50px;
+    left: 80px;
+}
